@@ -15,7 +15,6 @@ const useEmergencyWithdraw = () => {
 
     const emergencyWithdraw = useCallback(async () => {
         if (!address) throw new Error("Wallet must be connected"); 
-        if (!_amount || Number(_amount) <= 0) throw new Error("Enter valid amount");
 
         try {
             const txHash = await walletClient.writeContract({

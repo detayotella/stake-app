@@ -15,9 +15,6 @@ function useStackWithdraw() {
   const withdrawStake = useCallback(
     async (amount) => {
       if (!address) throw new Error("Wallet not connected");
-      if (!amount || Number(amount) <= 0) {
-        throw new Error("Withdraw amount must be greater than 0");
-      }
 
       const bigAmount = parseEther(amount.toString());
 
